@@ -1,55 +1,46 @@
 parkmap Cookbook
 =========================
-TODO: Enter the cookbook description here.
 
-e.g.
-This cookbook makes your favorite breakfast sandwich.
+Parkmapの開発するためのvagrant用の仮想マシンをつくるためのChef Cookbookです。
 
 Requirements
 ------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
 
-e.g.
+* ubuntu 14.10
+
+
 #### packages
-- `toaster` - parkmap-cookbook needs toaster to brown your bagel.
+
 
 Attributes
 ----------
-TODO: List your cookbook attributes here.
 
-e.g.
-#### parkmap-cookbook::default
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['parkmap-cookbook']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
-  </tr>
-</table>
+
 
 Usage
 -----
-#### parkmap-cookbook::default
-TODO: Write usage instructions for each cookbook.
 
-e.g.
-Just include `parkmap-cookbook` in your node's `run_list`:
+## 動作確認
 
-```json
-{
-  "name":"my_node",
-  "run_list": [
-    "recipe[parkmap-cookbook]"
-  ]
-}
 ```
+test-kitchen converge
+```
+
+## 仮想マシン作成
+
+```
+vagrant plugin install vagrant-omnibus
+gem install berkshelf
+berks vendor cookbooks
+vagrant up
+```
+
+## box作成
+
+```
+rake box
+```
+
 
 Contributing
 ------------
