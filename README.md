@@ -1,4 +1,4 @@
-parkmap-cookbook Cookbook
+parkmap Cookbook
 =========================
 TODO: Enter the cookbook description here.
 
