@@ -1,6 +1,10 @@
 include_recipe 'git'
+include_recipe 'rbenv::default'
+include_recipe 'rbenv::ruby_build'
 include_recipe 'nodejs'
 include_recipe 'postgresql::server'
-include_recipe 'database::postgresql'
+#include_recipe 'database::postgresql'
+# https://github.com/hw-cookbooks/postgresql/issues/212
 include_recipe 'xml'
 include_recipe 'nginx'
+include_recipe 'parkmap::setup_ruby'
