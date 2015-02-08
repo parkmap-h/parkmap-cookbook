@@ -1,0 +1,6 @@
+include_recipe 'git'
+include_recipe 'nodejs'
+include_recipe 'postgresql::server'
+include_recipe 'database::postgresql'
+include_recipe 'xml'
+include_recipe 'nginx'
