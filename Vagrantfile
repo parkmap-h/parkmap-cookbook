@@ -28,6 +28,16 @@ Vagrant.configure(2) do |config|
   config.vm.provision "chef_zero" do |chef|
     chef.cookbooks_path = 'cookbooks'
     chef.add_recipe 'parkmap'
+
+    chef.json = {
+        "postgresql" => {
+            "version" => "9.4",
+            "enable_pgdg_apt" => true,
+            "password"=> {
+                "postgres" => "postgres"
+            }
+        }
+    }
   end
 
   # Create a private network, which allows host-only access to the machine
