@@ -23,8 +23,10 @@ Usage
 ## 動作確認
 
 ```
-test-kitchen converge
+kitchen converge
 ```
+
+セットアップの詳細は[こちら](http://qiita.com/eielh/items/adb173ffcd6389c12e36)を参照
 
 ## 仮想マシン作成
 
