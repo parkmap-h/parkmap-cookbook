@@ -1,3 +1,5 @@
+include_attribute 'postgresql'
+
 version = '9.4'
 node.default.postgresql.version = version
 node.default.postgresql.server.packages = ['postgresql-9.4-postgis-2.1']
@@ -11,17 +13,5 @@ node.default.postgresql.config.hba_file = "/etc/postgresql/#{version}/main/pg_hb
 node.default.postgresql.config.ident_file = "/etc/postgresql/#{version}/main/pg_ident.conf"
 node.default.postgresql.config.external_pid_file = "/var/run/postgresql/#{version}-main.pid"
 
-include_recipe 'postgresql::server'
-include_recipe 'database::postgresql'
-postgresql_connection_info = {
-  :host     => 'localhost',
-  :port     => node.postgresql.config.port,
-  :username => 'postgres',
-  :password => node.postgresql.password.postgres
-}
+include_attribute 'nginx'
 
-postgresql_database_user 'vagrant' do
-  connection postgresql_connection_info
-  superuser true
-  action :create
-end

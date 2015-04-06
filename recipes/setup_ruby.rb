@@ -1,3 +1,3 @@
-rbenv_ruby "2.2.0" do
-  global true
-end
+package 'libffi-dev'
+include_recipe 'rbenv::default'
+include_recipe 'rbenv::ruby_build'

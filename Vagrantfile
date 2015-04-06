@@ -30,6 +30,9 @@ Vagrant.configure(2) do |config|
     chef.add_recipe 'parkmap'
 
     chef.json = {
+        "ruby" => {
+            "version" => "2.2.0"
+        },
         "postgresql" => {
             "version" => "9.4",
             "enable_pgdg_apt" => true,

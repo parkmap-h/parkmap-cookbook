@@ -1,10 +1,11 @@
-include_recipe 'git'
-include_recipe 'rbenv::default'
-include_recipe 'rbenv::ruby_build'
-include_recipe 'nodejs'
-include_recipe 'postgresql::server'
-#include_recipe 'database::postgresql'
-# https://github.com/hw-cookbooks/postgresql/issues/212
-include_recipe 'xml'
-include_recipe 'nginx'
+case platform?
+  when 'ubuntu'
+    include_recipe 'apt'
+  when 'centos'
+    include_recipe 'yum'
+    include_recipe 'yum-epel'
+end
+
+include_recipe 'parkmap::setup_db'
 include_recipe 'parkmap::setup_ruby'
+include_recipe 'nginx'
